@@ -5,6 +5,7 @@ export class RecipesResponse {
 
   public code: string ;
   public description: string;
+  public data: any;
   public recipes: Recipe[];
 
 }

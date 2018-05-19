@@ -64,4 +64,20 @@ export class DataStorageService {
         }
       );
   }
+
+  listIngreditByRecipe(id:number, recipe:Recipe) {
+    this.http.get('http://localhost:8080/api/ingredient/'+id)
+      .map(
+        (response: Response) => {
+          const recipesResponse: RecipesResponse = response.json();
+          return recipesResponse;
+        }
+      )
+      .subscribe(
+        (recipesResponse: RecipesResponse) => {
+          if(recipesResponse.code=='200')
+            recipe.ingredients = recipesResponse.data;
+        }
+      );
+  }
 }
