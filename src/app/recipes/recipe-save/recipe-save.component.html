@@ -4,25 +4,31 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <label>Nombre: <input type="text" name="" value="" [(ngModel)]="recipe.name"></label>
+    <label>Nombre: </label><input type="text" name="" value="" [(ngModel)]="recipe.name">
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <label>Descripcion: <input type="text" name="" value="" [(ngModel)]="recipe.description"></label>
+    <label>Descripcion: </label><input type="text" name="" value="" [(ngModel)]="recipe.description">
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <label>Imagen: <input type="text" name="" value="" [(ngModel)]="recipe.imagePath"></label>
+    <label>Imagen: </label><input type="text" name="" value="" [(ngModel)]="recipe.imagePath">
   </div>
 </div>
 <div class="row">
 	<label >Ingredientes: </label>
   <div class="col-xs-12">
-    <label>Nombre: <input type="text" name="" value="" [(ngModel)]="name"></label>
-    <label>Cantidad: <input type="number" name="" value="" [(ngModel)]="amount"></label>
-     <button (click)="addIngredient()">Agregar</button>
+    <div class="col-xs-5">
+      <label>Nombre: </label><input type="text" name="" value="" [(ngModel)]="name">
+    </div>
+    <div class="col-xs-5">
+      <label>Cantidad: </label><input type="number" name="" value="" [(ngModel)]="amount">
+    </div>
+    <div class="col-xs-2">
+       <button class="btn btn-success" (click)="addIngredient()">Agregar</button>
+    </div>
   </div>
 </div>
 <div class="row">
@@ -31,12 +37,13 @@
       <li
         class="list-group-item"
         *ngFor="let ingredient of recipe.ingredients; let i = index ">
-        {{ ingredient.name }} - {{ ingredient.amount }} <button (click)="removeIngredient(i)">Eliminar</button>
+        <label>{{ ingredient.name }} - {{ ingredient.amount }}</label>
+        <button class="btn btn-success" (click)="removeIngredient(i)">Eliminar</button>
       </li>
     </ul>
   </div>
 </div>
 
 <div class="col-xs-12">
-	<button (click)="save()">Guardar</button>
+	<button class="btn btn-success" (click)="save()">Guardar</button>
 </div>

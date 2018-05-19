@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+.row label{
+		width: 30%;
+		min-width: 40px;
+		text-align: right;
+	}
+.row input{
+	width: 70%; 
+}
+.list-group-item 
+	label{
+		width: 75%;
+		text-align: left;
+	}
+h1{
+	text-align: center;
+}	
